@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Algoritmos Unidade 1</title>
+        <link rel="stylesheet" href="bootstrap.css">
+        <style>
+            #menu {
+                background: #b993d6;
+                background: -webkit-linear-gradient(
+                    to bottom,
+                    #8ca6db,
+                    #b993d6
+                );
+                background: linear-gradient(to bottom, #8ca6db, #b993d6);
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container pb-3 text-center">
+            <div class="p-5 text-light shadow-sm" id="menu">
+                <h1 class="mb-4">Algoritmos Unidade 1</h1>
+                <div>
+                    <div class="btn btn-light m-2" id="btnTransl">
+                        Demo: Translação
+                    </div>
+                    <div class="btn btn-light m-2" id="btnEscala">
+                        Demo: Escala
+                    </div>
+                    <div class="btn btn-light m-2" id="btnRotacao">
+                        Demo: Rotação
+                    </div>
+                    <div class="btn btn-light m-2" id="btnReflexao">
+                        Demo: Reflexões
+                    </div>
+                </div>
+                <div>
+                    <div class="btn btn-light m-2" id="btnCohen">
+                        Demo: Cohen-Sutherland
+                    </div>
+                    <div class="btn btn-light m-2" id="btnLiang">
+                        Demo: Liang-Barsky
+                    </div>
+                </div>
+            </div>
+
+            <div class="container mt-3">
+                <div id="divCoordenadas">
+                    <div id="divBtnDesenho">
+                        <div class="btn btn-primary m-3" id="btnDDA">
+                            Desenhar Reta (DDA)
+                        </div>
+                        <div class="btn btn-primary m-3" id="btnBres">
+                            Desenhar Reta (Bresenham)
+                        </div>
+                        <div class="btn btn-primary m-3" id="btnBresCirc">
+                            Desenhar Circunferência
+                        </div>
+                    </div>
+                    <p class="fw-bold" id="displayCoordenadas">
+                        Coordenadas: (X, Y)
+                    </p>
+                    <p id="firstCoord">Ponto 1: (0, 0)</p>
+                    <p id="secCoord">Ponto 2: (0, 0)</p>
+                </div>
+
+                <div class="mb-2">
+                    <input
+                        class="mb-3"
+                        style="display: none"
+                        id="configX"
+                        type="text"
+                        placeholder="Distância de X"
+                        value="140"
+                    />
+                    <input
+                        class="mb-3"
+                        style="display: none"
+                        id="configY"
+                        type="text"
+                        placeholder="Distância de Y"
+                        value="140"
+                    />
+                    <div
+                        class="btn btn-warning"
+                        style="display: none"
+                        id="btnAtualizar"
+                    >
+                        Atualizar
+                    </div>
+
+                    <div
+                        class="btn btn-success m-3"
+                        style="display: none"
+                        id="btnRefX"
+                    >
+                        Reflexão X
+                    </div>
+                    <div
+                        class="btn btn-success m-3"
+                        style="display: none"
+                        id="btnRefY"
+                    >
+                        Reflexão Y
+                    </div>
+                    <div
+                        class="btn btn-success m-3"
+                        style="display: none"
+                        id="btnRefXY"
+                    >
+                        Reflexão XY
+                    </div>
+
+                    <div
+                        class="btn btn-warning mb-3"
+                        style="display: none"
+                        id="btnRecorte"
+                    >
+                        Verificar Recorte de Reta
+                    </div>
+
+                    <div>
+                        <span
+                            class="badge bg-primary"
+                            style="display: none"
+                            id="infoRecorte"
+                            >Desenhe uma Reta</span
+                        >
+                    </div>
+                </div>
+
+                <div>X</div>
+                <span class="mx-2">Y</span
+                ><canvas
+                    class="shadow"
+                    id="myCanvas"
+                    width="300"
+                    height="300"
+                ></canvas>
+            </div>
+        </div>
+
+        <script src="script.js"></script>
+    </body>
+</html>
