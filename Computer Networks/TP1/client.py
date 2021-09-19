@@ -1,4 +1,10 @@
-# Import socket module
+'''
+TP1 LRSO - Sockets / Threads
+
+Matheus Teixeira Alves
+Rafael de Paula Maia
+'''
+
 import socket
 
 

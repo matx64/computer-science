@@ -1,3 +1,12 @@
+'''
+TP1 LRSO - Sockets / Threads
+
+Matheus Teixeira Alves
+Rafael de Paula Maia
+'''
+
+# SERVIDOR
+
 import socket
 from _thread import start_new_thread
 
@@ -8,20 +17,21 @@ def threaded(c):
     while True:
 
         # poltrona selecionada pelo cliente
-        data = c.recv(1024)
+        poltrona = c.recv(1024)
 
-        if not data:
+        if not poltrona:
             c.send("AMARELO Linhas -- Obrigado pela preferencia!".encode('ascii'))
             break
 
         # enviar resposta ao cliente
-        if(data not in poltronas_reservadas):
-            poltronas_reservadas.append(data)
+        if(poltrona not in poltronas_reservadas):
+            poltronas_reservadas.append(poltrona)
             c.send("Poltrona reservada com sucesso!".encode('ascii'))
         else:
             c.send("Essa poltrona ja foi reservada. Selecione outra.".encode('ascii'))
 
     # conexao encerrada
+    print("Encerrando Thread e Conexao com cliente.")
     c.close()
 
 
@@ -45,6 +55,7 @@ def Main():
         print('Cliente conectado em: ', addr[0], ':', addr[1])
 
         # inicio de uma thread com novo cliente
+        print("Criando uma thread com novo cliente...")
         start_new_thread(threaded, (c,))
 
     # encerramento do socket e programa
